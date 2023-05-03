@@ -5,7 +5,7 @@ on:
       - main
 
 jobs:
-  ping-pong:
+  Informing-remote-repo-about-update:
     runs-on: ubuntu-latest
     steps:
       - name: PING - Dispatch initiating repository event
