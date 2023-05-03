@@ -2,7 +2,7 @@ name: Pinging remote repo
 on:
   push:
     branches:
-      - yadhap/cicd
+      - main
 
 jobs:
   ping-pong:
