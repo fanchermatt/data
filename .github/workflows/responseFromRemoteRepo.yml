@@ -1,4 +1,4 @@
-name: PONG - Response received from remote repo
+name: Response received from remote repo
 
 on: [repository_dispatch]
 
