@@ -3,7 +3,7 @@ name: Pinging remote repo
 on:
   push:
     branches:
-      - main
+      - yadhap/cicd
 
 jobs:
   ping-pong:
@@ -15,5 +15,5 @@ jobs:
           echo "Pinging remote repo - https://github.com/fanchermatt/hpcc-projects"
           curl -X POST https://api.github.com/repos/fanchermatt/hpcc-projects/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.ACCESS_TOKEN_HPCCPROJECTS_GHPAGE_DEPLOY }} \
+          -u ${{ secrets.ACCESS_TOKEN_HPCC_PROJECTS }} \
           --data '{"event_type": "ping", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
