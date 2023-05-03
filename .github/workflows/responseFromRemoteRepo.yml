@@ -3,7 +3,7 @@ name: PONG - Response from remote repo
 on: [repository_dispatch]
 
 jobs:
-  ping-pong:
+  Acknowledge-message-received:
     runs-on: ubuntu-latest
     steps:
       - name: Event Information
