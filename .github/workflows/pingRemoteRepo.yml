@@ -1,0 +1,19 @@
+
+name: Pinging remote repo
+on:
+  push:
+    branches:
+      - yadhap/cicd
+
+jobs:
+  ping-pong:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PING - Dispatch initiating repository event
+        if: github.event.action != 'pong'
+        run: |
+          echo "Pinging remote repo - https://github.com/fanchermatt/hpcc-projects"
+          curl -X POST https://api.github.com/repos/fanchermatt/hpcc-projects/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.ACCESS_TOKEN_HPCC_PROJECTS }} \
+          --data '{"event_type": "ping", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
